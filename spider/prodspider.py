@@ -13,8 +13,8 @@ class ProductsSpider(scrapy.Spider):
             with open('products.csv', 'a+') as f:
                 f.truncate(0)
         except IOError as identifier:
-            # print("File already openend, please close products.csv file")
-            sys.exit("File already openend, please close products.csv file")
+            # print("File already opened, please close products.csv file")
+            sys.exit("File already opened, please close products.csv file")
         
         urls = ['https://sidip.gob.do/dn.php']
         for url in urls:
@@ -38,8 +38,8 @@ class ProductsSpider(scrapy.Spider):
             with myfile as f:
                 f.writelines([', '.join(row) + "\n" for row in rows]).encode('utf-8')
         except IOError as identifier:
-            # print("File already openend, please close products.csv file")
-            sys.exit("File already openend, please close products.csv file")
+            # print("File already opened, please close products.csv file")
+            sys.exit("File already opened, please close products.csv file")
 
         
 process = CrawlerProcess()
